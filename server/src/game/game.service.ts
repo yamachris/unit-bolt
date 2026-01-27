@@ -6,6 +6,7 @@ import { TimerService } from './timer.service';
 import { TimerType, GameTimer } from '../entities/game-timer.entity';
 import { MatchmakingQueue } from '../entities/matchmaking-queue.entity';
 import { AuthService } from '../auth/auth.service';
+import { GameAITurnManager } from './ai/game-ai-turn-manager';
 import {
   Card,
   Game,
@@ -43,6 +44,8 @@ import { TIME_SETUP_LIMIT, TIME_TURN_LIMIT } from '../constants/timers';
 
 @Injectable()
 export class GameService {
+  private aiTurnManager: GameAITurnManager;
+
   constructor(
     @InjectRepository(GameEntity)
     private gameRepository: Repository<GameEntity>,
@@ -50,15 +53,40 @@ export class GameService {
     private queueRepository: Repository<MatchmakingQueue>,
     private authService: AuthService,
     private timerService: TimerService,
-  ) {}
+  ) {
+    this.aiTurnManager = new GameAITurnManager(this);
+  }
+
+  async triggerAITurnIfNeeded(gameId: string): Promise<void> {
+    const gameData = await this.getGameState(gameId);
+    if (!gameData) return;
+
+    const currentPlayerId = gameData.players[gameData.currentPlayerIndex];
+
+    if (this.aiTurnManager.isAIPlayer(currentPlayerId)) {
+      const currentPlayerState = gameData.playersGameStates[gameData.currentPlayerIndex];
+
+      if (currentPlayerState.phase === 'SETUP') {
+        await this.aiTurnManager.handleAISetup(gameId, currentPlayerId);
+      } else {
+        await this.aiTurnManager.handleAITurn(gameId, currentPlayerId);
+      }
+    }
+  }
 
   async createGame(mode: string, playersInfo: any[]): Promise<string> {
-    const nbPlayers = playersInfo.length;
+    const nbPlayers = mode === 'solo' ? 2 : playersInfo.length;
     const gameEntity = new GameEntity();
     gameEntity.state = this.initializeGame(mode, nbPlayers);
     gameEntity.game_mode = mode;
 
     gameEntity.state = this.addPlayer(gameEntity.state, playersInfo[0].playerId, playersInfo[0].socketId);
+
+    if (mode === 'solo') {
+      const aiPlayerId = `AI_${Date.now()}`;
+      const aiSocketId = `AI_SOCKET_${Date.now()}`;
+      gameEntity.state = this.addPlayer(gameEntity.state, aiPlayerId, aiSocketId);
+    }
 
     if (playersInfo.length > 1 && mode == 'multiplayer')
       gameEntity.state = this.addPlayer(gameEntity.state, playersInfo[1].playerId, playersInfo[1].socketId);
@@ -577,6 +605,8 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
+    await this.triggerAITurnIfNeeded(gameId);
+
     return game.state;
   }
 
@@ -1041,6 +1071,9 @@ export class GameService {
         // Save the updated game
         game.state = gameData;
         await this.gameRepository.save(game);
+
+        await this.triggerAITurnIfNeeded(gameId);
+
         return game.state;
       }
     }
@@ -1051,6 +1084,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
 
     return game.state;
   }
@@ -1118,6 +1153,8 @@ export class GameService {
     game.state = gameData;
 
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1172,6 +1209,8 @@ export class GameService {
     game.state = gameData;
 
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1346,6 +1385,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1389,6 +1430,7 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
     return game.state;
   }
 
@@ -1574,6 +1616,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1633,6 +1677,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1766,6 +1812,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1953,6 +2001,8 @@ export class GameService {
     // Save the updated game state
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1994,6 +2044,8 @@ export class GameService {
     // Save the updated game state
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2020,6 +2072,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2150,6 +2204,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2227,6 +2283,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2267,6 +2325,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2387,6 +2447,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -3223,6 +3285,8 @@ export class GameService {
     // Save the updated game
     game.state = gameData;
     await this.gameRepository.save(game);
+
+    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
