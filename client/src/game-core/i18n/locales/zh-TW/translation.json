@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "回合 {{number}}",
+    "discard": "棄牌",
+    "draw": "抽牌",
+    "play": "行動",
+    "messages": {
+      "discardPhase": "棄置一張牌以繼續",
+      "drawPhase": "抽取一張牌",
+      "actionPhase": "使用你的牌或跳過回合",
+      "canEndTurn": "你可以結束本回合",
+      "strategicShuffleFirst": "首次戰略洗牌！⚠️ 下一次使用將結束你的回合。",
+      "strategicShuffleNext": "戰略洗牌完成 - 回合結束"
+    },
+    "gameOver": {
+      "title": "遊戲結束",
+      "surrendered": "你已投降",
+      "finalScore": "最終得分",
+      "newGame": "新遊戲"
+    },
+    "setup": {
+      "title": "準備階段",
+      "welcome": "歡迎來到 UNIT 卡牌遊戲！請選擇 2 張牌作為你的儲備。",
+      "reserve": "儲備",
+      "yourHand": "你的手牌",
+      "handCount": "張牌",
+      "selectCards": "請選擇 2 張牌作為儲備",
+      "startGame": "開始遊戲"
+    },
+    "cards": {
+      "deck": "牌堆",
+      "discard": "棄牌堆",
+      "hand": "手牌",
+      "reserve": "儲備",
+      "total": "總計",
+      "slot": "槽位",
+      "jack": "傑克",
+      "king": "國王"
+    },
+    "actions": {
+      "exchange": "交換",
+      "surrender": "投降",
+      "skipAction": "跳過行動",
+      "endTurn": "結束回合",
+      "strategicShuffle": "戰略洗牌"
+    },
+    "ui": {
+      "startMessage": "請選擇你的第一張棄牌",
+      "cardCount": "張牌",
+      "strategicShuffle": "戰略洗牌",
+      "cancel": "取消",
+      "confirm": "確認",
+      "opponentCards": "對手的牌"
+    },
+    "attack": {
+      "chooseAttack": "選擇你的攻擊",
+      "selectTarget": "選擇目標",
+      "noValidTargets": "沒有可用的有效目標",
+      "healthTarget": "生命值",
+      "warnings": {
+        "invalidTarget": "無效目標",
+        "unitAlreadyAttacked": "該單位已經攻擊過",
+        "protectedByKing": "受國王保護",
+        "cardNotAvailable": "手牌中沒有該牌",
+        "invalidHealthAttackCard": "該牌不能用於生命值攻擊"
+      }
+    },
+    "block": {
+      "title": "使用王牌阻擋？",
+      "description": "玩家 {{player}} 正在使用 {{card}} 攻擊你的 {{target}}。你可以用王牌阻擋這次攻擊。",
+      "selectJoker": "選擇要使用的王牌：",
+      "inHand": "手牌中",
+      "inReserve": "儲備中",
+      "block": "阻擋攻擊",
+      "decline": "允許攻擊",
+      "noJokers": "你沒有王牌可以用來阻擋。"
+    }
+  }
+}

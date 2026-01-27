@@ -1,0 +1,88 @@
+{
+  "game": {
+    "turn": "Turno {{number}}",
+    "discard": "Descarte",
+    "draw": "Comprar",
+    "play": "Brincadeira",
+    "messages": {
+      "discardPhase": "Descarte uma carta para continuar",
+      "drawPhase": "Compre uma carta",
+      "actionPhase": "Jogue suas cartas ou passe o turno",
+      "canEndTurn": "Você pode terminar seu turno",
+      "strategicShuffleFirst": "Primeira Embaralhada Estratégica! ⚠️ O próximo uso fará você perder sua vez.",
+      "strategicShuffleNext": "Embaralhada estratégica concluída - Fim da sua vez"
+    },
+    "gameOver": {
+      "title": "Fim de Jogo",
+      "surrendered": "Você desistiu",
+      "finalScore": "Pontuação Final",
+      "newGame": "Novo Jogo"
+    },
+    "setup": {
+      "title": "Fase de Preparação",
+      "welcome": "Bem-vindo ao UNIT Card Game! Por favor, selecione 2 cartas para sua reserva",
+      "reserve": "Reserva",
+      "yourHand": "Sua mão",
+      "handCount": "cartas",
+      "selectCards": "Selecione 2 cartas para a reserva",
+      "startGame": "Iniciar Jogo"
+    },
+    "cards": {
+      "deck": "Baralho",
+      "discard": "Descarte",
+      "hand": "Mão",
+      "reserve": "Reserva",
+      "total": "Total",
+      "slot": "Espaço",
+      "jack": "Valete",
+      "king": "Rei",
+      "as": "Ás",
+      "revolution": "revolução",
+      "of": "de",
+      "suits": {
+        "hearts": "Copas",
+        "diamonds": "Ouros",
+        "clubs": "Paus",
+        "spades": "Espadas"
+      }
+    },
+    "actions": {
+      "exchange": "Trocar",
+      "surrender": "Desistir",
+      "skipAction": "Pular Ação",
+      "endTurn": "Finalizar Turno",
+      "strategicShuffle": "Embaralhamento Estratégico"
+    },
+    "ui": {
+      "startMessage": "Selecione sua primeira carta para descartar",
+      "cardCount": "cartas",
+      "strategicShuffle": "Embaralhamento Estratégico",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "opponentCards": "Cartas do Oponente"
+    },
+    "attack": {
+      "chooseAttack": "Escolha seu ataque",
+      "selectTarget": "Selecione o alvo",
+      "noValidTargets": "Nenhum alvo válido disponível",
+      "healthTarget": "pontos de vida",
+      "warnings": {
+        "invalidTarget": "Alvo inválido",
+        "unitAlreadyAttacked": "Esta unidade já atacou",
+        "protectedByKing": "Protegido pelo Rei",
+        "cardNotAvailable": "Carta não disponível na mão",
+        "invalidHealthAttackCard": "Esta carta não pode ser usada para ataques de vida"
+      }
+    },
+    "block": {
+      "title": "Bloquear com Coringa?",
+      "description": "O jogador {{player}} está atacando seu {{target}} com {{card}}. Você pode bloquear este ataque com um Coringa.",
+      "selectJoker": "Selecione um Coringa para usar:",
+      "inHand": "Na Mão",
+      "inReserve": "Na Reserva",
+      "block": "Bloquear Ataque",
+      "decline": "Permitir Ataque",
+      "noJokers": "Você não tem nenhum Coringa para bloquear."
+    }
+  }
+}

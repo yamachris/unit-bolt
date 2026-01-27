@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "الدور {{number}}",
+    "discard": "التخلص",
+    "draw": "اسحب",
+    "play": "العب",
+    "messages": {
+      "discardPhase": "تخلص من بطاقة واحدة للمتابعة",
+      "drawPhase": "اسحب بطاقة واحدة",
+      "actionPhase": "العب بطاقاتك أو تخطى دورك",
+      "canEndTurn": "يمكنك إنهاء دورك",
+      "strategicShuffleFirst": "أول خلط استراتيجي! ⚠️ الاستخدام التالي سينهي دورك.",
+      "strategicShuffleNext": "تم الخلط الاستراتيجي - نهاية دورك"
+    },
+    "gameOver": {
+      "title": "انتهت اللعبة",
+      "surrendered": "لقد استسلمت",
+      "finalScore": "النتيجة النهائية",
+      "newGame": "لعبة جديدة"
+    },
+    "setup": {
+      "title": "مرحلة الإعداد",
+      "welcome": "مرحبًا بك في لعبة UNIT Card! يرجى اختيار بطاقتين للاحتياطي الخاص بك",
+      "reserve": "الاحتياطي",
+      "yourHand": "يدك",
+      "handCount": "بطاقات",
+      "selectCards": "اختر بطاقتين للاحتياطي",
+      "startGame": "ابدأ اللعبة"
+    },
+    "cards": {
+      "deck": "السطح",
+      "discard": "التخلص",
+      "card": "بطاقة",
+      "reserve": "الاحتياطي",
+      "total": "الإجمالي",
+      "slot": "المكان",
+      "jack": "الولد",
+      "king": "الملك"
+    },
+    "actions": {
+      "exchange": "تبديل",
+      "surrender": "استسلام",
+      "skipAction": "تخطى الإجراء",
+      "endTurn": "إنهاء الدور",
+      "strategicShuffle": "الخلط الاستراتيجي"
+    },
+    "ui": {
+      "startMessage": "اختر أول بطاقة للتخلص منها",
+      "cardCount": "بطاقات",
+      "strategicShuffle": "الخلط الاستراتيجي",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "opponentCards": "بطاقات الخصم"
+    },
+    "attack": {
+      "chooseAttack": "اختر هجومك",
+      "selectTarget": "حدد الهدف",
+      "noValidTargets": "لا توجد أهداف صالحة متاحة",
+      "healthTarget": "نقاط الصحة",
+      "warnings": {
+        "invalidTarget": "هدف غير صالح",
+        "unitAlreadyAttacked": "هذه الوحدة هاجمت بالفعل",
+        "protectedByKing": "محمي بواسطة الملك",
+        "cardNotAvailable": "البطاقة غير متاحة في اليد",
+        "invalidHealthAttackCard": "لا يمكن استخدام هذه البطاقة لهجمات الصحة"
+      }
+    },
+    "block": {
+      "title": "منع باستخدام الجوكر؟",
+      "description": "اللاعب {{player}} يهاجم {{target}} الخاص بك باستخدام {{card}}. يمكنك منع هذا الهجوم باستخدام الجوكر.",
+      "selectJoker": "حدد جوكر للاستخدام:",
+      "inHand": "في اليد",
+      "inReserve": "في الاحتياطي",
+      "block": "منع الهجوم",
+      "decline": "السماح بالهجوم",
+      "noJokers": "ليس لديك أي جوكر للمنع."
+    }
+  }
+}

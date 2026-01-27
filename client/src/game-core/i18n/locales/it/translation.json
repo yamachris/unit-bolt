@@ -1,0 +1,88 @@
+{
+  "game": {
+    "turn": "Turno {{number}}",
+    "discard": "Scarti",
+    "draw": "Pesca",
+    "play": "Giocare",
+    "messages": {
+      "discardPhase": "Scarta una carta per continuare",
+      "drawPhase": "Pesca una carta",
+      "actionPhase": "Gioca le tue carte o passa il turno",
+      "canEndTurn": "Puoi terminare il tuo turno",
+      "strategicShuffleFirst": "Primo Mescolamento Strategico! ⚠️ Il prossimo utilizzo ti farà saltare il turno.",
+      "strategicShuffleNext": "Mescolamento strategico completato - Fine del tuo turno"
+    },
+    "gameOver": {
+      "title": "Partita Terminata",
+      "surrendered": "Hai abbandonato",
+      "finalScore": "Punteggio Finale",
+      "newGame": "Nuova Partita"
+    },
+    "setup": {
+      "title": "Fase di Preparazione",
+      "welcome": "Benvenuto in UNIT Card Game! Seleziona 2 carte per la tua riserva",
+      "reserve": "Riserva",
+      "yourHand": "La tua mano",
+      "handCount": "carte",
+      "selectCards": "Seleziona 2 carte per la riserva",
+      "startGame": "Inizia la Partita"
+    },
+    "cards": {
+      "deck": "Mazzo",
+      "discard": "Scarti",
+      "hand": "Mano",
+      "reserve": "Riserva",
+      "total": "Totale",
+      "slot": "Slot",
+      "jack": "Fante",
+      "king": "Re",
+      "as": "Asso",
+      "revolution": "rivoluzione",
+      "of": "di",
+      "suits": {
+        "hearts": "Cuori",
+        "diamonds": "Quadri",
+        "clubs": "Fiori",
+        "spades": "Picche"
+      }
+    },
+    "actions": {
+      "exchange": "Scambia",
+      "surrender": "Abbandona",
+      "skipAction": "Salta Azione",
+      "endTurn": "Termina Turno",
+      "strategicShuffle": "Mischiata Strategica"
+    },
+    "ui": {
+      "startMessage": "Seleziona la tua prima carta da scartare",
+      "cardCount": "carte",
+      "strategicShuffle": "Mischiata Strategica",
+      "cancel": "Annulla",
+      "confirm": "Conferma",
+      "opponentCards": "Carte dell'Avversario"
+    },
+    "attack": {
+      "chooseAttack": "Scegli il tuo attacco",
+      "selectTarget": "Seleziona un bersaglio",
+      "noValidTargets": "Nessun bersaglio valido disponibile",
+      "healthTarget": "punti vita",
+      "warnings": {
+        "invalidTarget": "Bersaglio non valido",
+        "unitAlreadyAttacked": "Questa unità ha già attaccato",
+        "protectedByKing": "Protetto dal Re",
+        "cardNotAvailable": "Carta non disponibile in mano",
+        "invalidHealthAttackCard": "Questa carta non può essere usata per attacchi ai punti vita"
+      }
+    },
+    "block": {
+      "title": "Bloccare con il Jolly?",
+      "description": "Il giocatore {{player}} sta attaccando il tuo {{target}} con {{card}}. Puoi bloccare questo attacco con un Jolly.",
+      "selectJoker": "Seleziona un Jolly da usare:",
+      "inHand": "In Mano",
+      "inReserve": "In Riserva",
+      "block": "Blocca Attacco",
+      "decline": "Lascia Passare l'Attacco",
+      "noJokers": "Non hai Jolly per bloccare."
+    }
+  }
+}

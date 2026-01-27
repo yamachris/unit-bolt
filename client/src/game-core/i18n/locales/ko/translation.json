@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "턴 {{number}}",
+    "discard": "버리기",
+    "draw": "드로우",
+    "play": "놀다",
+    "messages": {
+      "discardPhase": "계속하려면 카드를 한 장 버리세요",
+      "drawPhase": "카드를 한 장 드로우하세요",
+      "actionPhase": "카드를 사용하거나 턴을 넘기세요",
+      "canEndTurn": "턴을 종료할 수 있습니다",
+      "strategicShuffleFirst": "첫 번째 전략적 셔플! ⚠️ 다음 사용 시 턴이 종료됩니다.",
+      "strategicShuffleNext": "전략적 셔플 완료 - 턴 종료"
+    },
+    "gameOver": {
+      "title": "게임 종료",
+      "surrendered": "포기했습니다",
+      "finalScore": "최종 점수",
+      "newGame": "새로운 게임"
+    },
+    "setup": {
+      "title": "준비 단계",
+      "welcome": "UNIT 카드 게임에 오신 것을 환영합니다! 리저브에 사용할 카드 2장을 선택하세요",
+      "reserve": "리저브",
+      "yourHand": "당신의 핸드",
+      "handCount": "장의 카드",
+      "selectCards": "리저브에 사용할 카드 2장을 선택하세요",
+      "startGame": "게임 시작"
+    },
+    "cards": {
+      "deck": "덱",
+      "discard": "버리기",
+      "hand": "핸드",
+      "reserve": "리저브",
+      "total": "총계",
+      "slot": "슬롯",
+      "jack": "잭",
+      "king": "킹"
+    },
+    "actions": {
+      "exchange": "교환",
+      "surrender": "포기",
+      "skipAction": "액션 건너뛰기",
+      "endTurn": "턴 종료",
+      "strategicShuffle": "전략적 셔플"
+    },
+    "ui": {
+      "startMessage": "처음으로 버릴 카드를 선택하세요",
+      "cardCount": "장의 카드",
+      "strategicShuffle": "전략적 셔플",
+      "cancel": "초기화",
+      "confirm": "확인",
+      "opponentCards": "상대방 카드"
+    },
+    "attack": {
+      "chooseAttack": "공격을 선택하세요",
+      "selectTarget": "대상을 선택하세요",
+      "noValidTargets": "유효한 대상이 없습니다",
+      "healthTarget": "생명력",
+      "warnings": {
+        "invalidTarget": "유효하지 않은 대상",
+        "unitAlreadyAttacked": "이 유닛은 이미 공격했습니다",
+        "protectedByKing": "킹에 의해 보호됩니다",
+        "cardNotAvailable": "핸드에 카드가 없습니다",
+        "invalidHealthAttackCard": "이 카드는 생명력 공격에 사용할 수 없습니다"
+      }
+    },
+    "block": {
+      "title": "조커로 바로크하시겠습니까?",
+      "description": "플레이어 {{player}}가 {{card}}로 당신의 {{target}}을(를) 공격하고 있습니다. 조커로 이 공격을 바로크할 수 있습니다.",
+      "selectJoker": "사용할 조커를 선택하세요:",
+      "inHand": "핸드에",
+      "inReserve": "리저브에",
+      "block": "공격 바로크",
+      "decline": "공격 허용",
+      "noJokers": "바로크할 조커가 없습니다."
+    }
+  }
+}

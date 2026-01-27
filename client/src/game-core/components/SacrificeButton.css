@@ -1,0 +1,54 @@
+.sacrifice-button {
+  position: fixed;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* Mode jour */
+@media (prefers-color-scheme: light) {
+  .sacrifice-button {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-color: rgba(220, 53, 69, 0.2);
+  }
+}
+
+/* Mode nuit */
+@media (prefers-color-scheme: dark) {
+  .sacrifice-button {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #ff4d4d;
+    border-color: rgba(255, 77, 77, 0.2);
+  }
+}
+
+.sacrifice-button:hover:not(:disabled) {
+  background-color: rgba(220, 53, 69, 0.15);
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.sacrifice-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.sacrifice-button::before {
+  content: "☠️";
+  font-size: 13px;
+}

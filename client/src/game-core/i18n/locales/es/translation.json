@@ -1,0 +1,88 @@
+{
+  "game": {
+    "turn": "Turno {{number}}",
+    "discard": "Descartar",
+    "draw": "Robar",
+    "play": "Jugar",
+    "messages": {
+      "discardPhase": "Descarta una carta para continuar",
+      "drawPhase": "Roba una carta",
+      "actionPhase": "Juega tus cartas o pasa tu turno",
+      "canEndTurn": "Puedes terminar tu turno",
+      "strategicShuffleFirst": "¡Primer Barajado Estratégico! ⚠️ El próximo uso hará que pierdas tu turno.",
+      "strategicShuffleNext": "Barajado estratégico realizado - Fin de tu turno"
+    },
+    "gameOver": {
+      "title": "Fin del Juego",
+      "surrendered": "Te has rendido",
+      "finalScore": "Puntuación Final",
+      "newGame": "Nueva Partida"
+    },
+    "setup": {
+      "title": "Fase de Preparación",
+      "welcome": "¡Bienvenido a UNIT Card Game! Por favor, selecciona 2 cartas para tu reserva",
+      "reserve": "Reserva",
+      "yourHand": "Tu Mano",
+      "handCount": "cartas",
+      "selectCards": "Selecciona 2 cartas para la reserva",
+      "startGame": "Comenzar Partida"
+    },
+    "cards": {
+      "deck": "Mazo",
+      "discard": "Descarte",
+      "hand": "Mano",
+      "reserve": "Reserva",
+      "total": "Total",
+      "slot": "Espacio",
+      "jack": "Sota",
+      "king": "Rey",
+      "as": "As",
+      "revolution": "revolución",
+      "of": "de",
+      "suits": {
+        "hearts": "Corazones",
+        "diamonds": "Diamantes",
+        "clubs": "Tréboles",
+        "spades": "Picas"
+      }
+    },
+    "actions": {
+      "exchange": "Intercambiar",
+      "surrender": "Rendirse",
+      "skipAction": "Saltar Acción",
+      "endTurn": "Fin del Turno",
+      "strategicShuffle": "Barajado Estratégico"
+    },
+    "ui": {
+      "startMessage": "Selecciona tu primera carta para descartar",
+      "cardCount": "cartas",
+      "strategicShuffle": "Barajado Estratégico",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "opponentCards": "Cartas del Oponente"
+    },
+    "attack": {
+      "chooseAttack": "Elige tu ataque",
+      "selectTarget": "Selecciona objetivo",
+      "noValidTargets": "No hay objetivos válidos disponibles",
+      "healthTarget": "puntos de vida",
+      "warnings": {
+        "invalidTarget": "Objetivo inválido",
+        "unitAlreadyAttacked": "Esta unidad ya ha atacado",
+        "protectedByKing": "Protegido por el Rey",
+        "cardNotAvailable": "Carta no disponible en mano",
+        "invalidHealthAttackCard": "Esta carta no puede ser usada para ataques de vida"
+      }
+    },
+    "block": {
+      "title": "¿Bloquear con Comodín?",
+      "description": "El jugador {{player}} está atacando tu {{target}} con {{card}}. Puedes bloquear este ataque con un Comodín.",
+      "selectJoker": "Selecciona un Comodín para usar:",
+      "inHand": "En Mano",
+      "inReserve": "En Reserva",
+      "block": "Bloquear Ataque",
+      "decline": "Permitir Ataque",
+      "noJokers": "No tienes Comodines para bloquear."
+    }
+  }
+}

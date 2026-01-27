@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "चाल {{number}}",
+    "discard": "त्याग",
+    "draw": "ड्रा करें",
+    "play": "खेल",
+    "messages": {
+      "discardPhase": "जारी रखने के लिए एक कार्ड त्यागें",
+      "drawPhase": "एक कार्ड ड्रा करें",
+      "actionPhase": "अपने कार्ड खेलें या अपनी चाल छोड़ें",
+      "canEndTurn": "आप अपनी चाल समाप्त कर सकते हैं",
+      "strategicShuffleFirst": "पहला रणनीतिक शफल! ⚠️ अगली बार उपयोग करने पर आपकी चाल समाप्त हो जाएगी।",
+      "strategicShuffleNext": "रणनीतिक शफल पूरा - आपकी चाल समाप्त"
+    },
+    "gameOver": {
+      "title": "खेल समाप्त",
+      "surrendered": "आपने हार मान ली",
+      "finalScore": "अंतिम स्कोर",
+      "newGame": "नया खेल"
+    },
+    "setup": {
+      "title": "तैयारी चरण",
+      "welcome": "UNIT कार्ड गेम में आपका स्वागत है! कृपया अपने भंडार के लिए 2 कार्ड चुनें",
+      "reserve": "भंडार",
+      "yourHand": "आपके कार्ड",
+      "handCount": "कार्ड",
+      "selectCards": "भंडार के लिए 2 कार्ड चुनें",
+      "startGame": "खेल शुरू करें"
+    },
+    "cards": {
+      "deck": "डेक",
+      "discard": "त्याग",
+      "card": "कार्ड",
+      "reserve": "भंडार",
+      "total": "कुल",
+      "slot": "स्थान",
+      "jack": "जैक",
+      "king": "राजा"
+    },
+    "actions": {
+      "exchange": "बदलें",
+      "surrender": "समर्पण",
+      "skipAction": "क्रिया छोड़ें",
+      "endTurn": "चाल समाप्त करें",
+      "strategicShuffle": "रणनीतिक शफल"
+    },
+    "ui": {
+      "startMessage": "त्यागने के लिए अपना पहला कार्ड चुनें",
+      "cardCount": "कार्ड",
+      "strategicShuffle": "रणनीतिक शफल",
+      "cancel": "रद्द करें",
+      "confirm": "पुष्टि करें",
+      "opponentCards": "प्रतिद्वंद्वी के ताश"
+    },
+    "attack": {
+      "chooseAttack": "अपना हमला चुनें",
+      "selectTarget": "लक्ष्य चुनें",
+      "noValidTargets": "कोई वैध लक्ष्य उपलब्ध नहीं है",
+      "healthTarget": "स्वास्थ्य अंक",
+      "warnings": {
+        "invalidTarget": "अमान्य लक्ष्य",
+        "unitAlreadyAttacked": "इस इकाई ने पहले ही हमला किया है",
+        "protectedByKing": "राजा द्वारा संरक्षित",
+        "cardNotAvailable": "कार्ड हाथ में उपलब्ध नहीं है",
+        "invalidHealthAttackCard": "इस कार्ड का उपयोग स्वास्थ्य हमलों के लिए नहीं किया जा सकता"
+      }
+    },
+    "block": {
+      "title": "जोकर के साथ ब्लॉक करें?",
+      "description": "प्लेयर {{player}} {{card}} के साथ आपके {{target}} पर हमला कर रहा है। आप जोकर के साथ इस हमले को ब्लॉक कर सकते हैं।",
+      "selectJoker": "उपयोग करने के लिए एक जोकर चुनें:",
+      "inHand": "हाथ में",
+      "inReserve": "भंडार में",
+      "block": "हमला ब्लॉक करें",
+      "decline": "हमले को अनुमति दें",
+      "noJokers": "आपके पास ब्लॉक करने के लिए कोई जोकर नहीं है।"
+    }
+  }
+}

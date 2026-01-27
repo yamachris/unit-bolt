@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "ターン {{number}}",
+    "discard": "捨て札",
+    "draw": "ドロー",
+    "play": "遊ぶ",
+    "messages": {
+      "discardPhase": "カードを1枚捨てて続けてください",
+      "drawPhase": "カードを1枚引いてください",
+      "actionPhase": "カードをプレイするか、ターンをスキップしてください",
+      "canEndTurn": "ターンを終了できます",
+      "strategicShuffleFirst": "最初の戦略的シャッフル！⚠️ 次回の使用であなたのターンがスキップされます。",
+      "strategicShuffleNext": "戦略的シャッフル完了 - あなたのターンの終了"
+    },
+    "gameOver": {
+      "title": "ゲーム終了",
+      "surrendered": "降参しました",
+      "finalScore": "最終スコア",
+      "newGame": "新しいゲーム"
+    },
+    "setup": {
+      "title": "準備フェーズ",
+      "welcome": "UNITカードゲームへようこそ！リザーブ用に2枚のカードを選んでください",
+      "reserve": "リザーブ",
+      "yourHand": "あなたの手札",
+      "handCount": "枚のカード",
+      "selectCards": "リザーブ用に2枚のカードを選んでください",
+      "startGame": "ゲームを開始"
+    },
+    "cards": {
+      "deck": "山札",
+      "discard": "捨て札",
+      "hand": "手札",
+      "reserve": "リザーブ",
+      "total": "合計",
+      "slot": "スロット",
+      "jack": "ジャック",
+      "king": "キング"
+    },
+    "actions": {
+      "exchange": "交換する",
+      "surrender": "降参する",
+      "skipAction": "アクションをスキップ",
+      "endTurn": "ターンを終了",
+      "strategicShuffle": "戦略的シャッフル"
+    },
+    "ui": {
+      "startMessage": "最初の捨て札を選んでください",
+      "cardCount": "枚のカード",
+      "strategicShuffle": "戦略的シャッフル",
+      "cancel": "キャンセル",
+      "confirm": "確認",
+      "opponentCards": "相手のカード"
+    },
+    "attack": {
+      "chooseAttack": "攻撃を選択してください",
+      "selectTarget": "ターゲットを選択",
+      "noValidTargets": "有効なターゲットがありません",
+      "healthTarget": "ライフポイント",
+      "warnings": {
+        "invalidTarget": "無効なターゲット",
+        "unitAlreadyAttacked": "このユニットはすでに攻撃しました",
+        "protectedByKing": "キングにより保護されています",
+        "cardNotAvailable": "手札にカードがありません",
+        "invalidHealthAttackCard": "このカードはライフポイント攻撃に使用できません"
+      }
+    },
+    "block": {
+      "title": "ジョーカーでブロックしますか？",
+      "description": "プレイヤー{{player}}が{{card}}であなたの{{target}}を攻撃しています。ジョーカーでこの攻撃をブロックできます。",
+      "selectJoker": "使用するジョーカーを選択してください：",
+      "inHand": "手札に",
+      "inReserve": "リザーブに",
+      "block": "攻撃をブロック",
+      "decline": "攻撃を許可",
+      "noJokers": "ブロックするジョーカーがありません。"
+    }
+  }
+}

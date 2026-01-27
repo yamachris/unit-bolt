@@ -1,0 +1,396 @@
+/* Styles pour le composant GameLog */
+
+/* Conteneur principal */
+.game-log-container {
+  position: absolute;
+  width: 300px;
+  max-height: 80vh;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Styles pour le thème jour */
+body:not(.dark) .game-log-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles pour le thème nuit */
+body.dark .game-log-container {
+  background-color: rgba(17, 24, 39, 0.95);
+  color: white;
+  border: 1px solid rgba(55, 65, 81, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* En-tête du journal */
+.game-log-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
+}
+
+body:not(.dark) .game-log-header {
+  background-color: #1e40af;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #000000;
+}
+
+body.dark .game-log-header {
+  background-color: rgba(30, 41, 59, 0.95);
+  color: white;
+  font-weight: bold;
+}
+
+/* Corps du journal */
+.game-log-body {
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 8px;
+}
+
+/* Messages */
+.game-log-message {
+  padding: 6px 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Types de messages en mode jour */
+body:not(.dark) .game-log-opponent {
+  background-color: rgba(219, 234, 254, 0.9);
+  border-left: 4px solid #1e40af;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body:not(.dark) .game-log-action {
+  background-color: rgba(254, 226, 226, 0.9);
+  border-left: 4px solid #b91c1c;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body:not(.dark) .game-log-phase {
+  background-color: rgba(209, 250, 229, 0.9);
+  border-left: 4px solid #047857;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body:not(.dark) .game-log-system {
+  background-color: rgba(243, 232, 255, 0.9);
+  border-left: 4px solid #6d28d9;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+/* Types de messages en mode nuit */
+body.dark .game-log-opponent {
+  background-color: rgba(30, 58, 138, 0.2);
+  border-left: 5px solid #3b82f6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body.dark .game-log-action {
+  background-color: rgba(153, 27, 27, 0.2);
+  border-left: 5px solid #ef4444;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body.dark .game-log-phase {
+  background-color: rgba(22, 101, 52, 0.2);
+  border-left: 5px solid #10b981;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+body.dark .game-log-system {
+  background-color: rgba(91, 33, 182, 0.2);
+  border-left: 5px solid #8b5cf6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  padding: 8px 10px;
+  margin: 6px 0;
+}
+
+/* Icône du journal */
+.game-log-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1000;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+body:not(.dark) .game-log-icon {
+  background-color: #1e40af;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+body.dark .game-log-icon {
+  background-color: rgba(30, 41, 59, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.game-log-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation pour les nouveaux messages */
+.new-message {
+  animation: pulseMessage 2s ease-out;
+}
+
+@keyframes pulseMessage {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0.7;
+  }
+  70% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de pulsation pour l'icône */
+.pulsing-icon {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(30, 64, 175, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(30, 64, 175, 0.4);
+  }
+}
+
+/* Animation de fermeture */
+@keyframes closeAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+}
+
+/* Style pour le titre "Cartes de l'adversaire" */
+.cartes-adversaire-titre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ef4444;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Animation d'entrée pour le journal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de sortie pour le journal */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Animation pour les nouveaux messages - version unifiée */
+@keyframes highlightNew {
+  0% {
+    background-color: rgba(30, 64, 175, 0.3);
+    border-left: 3px solid #4f46e5;
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid transparent;
+  }
+}
+
+/* Animation pour l'ajout d'un nouveau message */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.game-log {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: fadeIn 0.3s forwards;
+}
+
+.game-log-header {
+  transition: background-color 0.3s ease;
+}
+
+.game-log-header:hover {
+  background-color: rgba(37, 79, 203, 0.95);
+}
+
+.game-log-message {
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s forwards;
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-log-message:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Classe pour les nouveaux messages - version unifiée */
+.game-log-message-new {
+  animation:
+    highlightNew 2s forwards,
+    slideIn 0.3s forwards;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles spécifiques pour les différents types de messages */
+.game-log-opponent {
+  background-color: rgba(168, 85, 247, 0.1);
+  border-left: 3px solid rgba(168, 85, 247, 0.6);
+}
+
+.game-log-action {
+  background-color: rgba(234, 88, 12, 0.1);
+  border-left: 3px solid rgba(234, 88, 12, 0.6);
+}
+
+.game-log-phase {
+  background-color: rgba(14, 165, 233, 0.1);
+  border-left: 3px solid rgba(14, 165, 233, 0.6);
+}
+
+.game-log-system {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid rgba(34, 197, 94, 0.6);
+}
+
+.game-log-timestamp {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.game-log-content {
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.game-log-closing {
+  animation: closeAnimation 0.3s forwards;
+}
+
+.game-log-icon {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: fadeIn 0.3s forwards;
+  cursor: grab;
+}
+
+.game-log-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}

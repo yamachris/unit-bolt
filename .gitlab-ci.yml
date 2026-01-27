@@ -1,0 +1,125 @@
+image: node:20.19.2
+
+stages:
+  - lint
+  - tests
+  - build
+  - deploy
+
+cache:
+  paths:
+    - client/node_modules/
+    - server/node_modules/
+
+# Client Linting
+client_prettier:
+  stage: lint
+  script:
+    - cd client
+    - npm install
+    - npx prettier --check "**/*.{js,jsx,ts,tsx,json,css,scss,md}"
+
+client_eslint:
+  stage: lint
+  script:
+    - cd client
+    - npm install
+    - npm run lint
+
+# Server Linting
+server_prettier:
+  stage: lint
+  script:
+    - cd server
+    - npm install
+    - npx prettier --check "**/*.{js,jsx,ts,tsx,json}"
+
+server_eslint:
+  stage: lint
+  script:
+    - cd server
+    - npm install
+    - npm run lint
+
+tests-backend:
+  stage: tests
+  script:
+    - cd server
+    - npm run test
+# Build client
+build_client:
+  stage: build
+  before_script:
+    - echo NEXT_PUBLIC_API_URL
+    - echo $NEXT_PUBLIC_API_URL
+  script:
+    - cd client
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - client/out/
+    expire_in: 1 week
+
+# Build server
+build_server:
+  stage: build
+  before_script:
+    - echo DATABASE_NAME
+    - echo $postgres_db_name
+  script:
+    - cd server
+    - npm install
+    - |
+      cat <<EOF > .env
+      DATABASE_HOST=${postgres_db_host}
+      DATABASE_PORT=5432
+      DATABASE_NAME=${postgres_db_name}
+      DATABASE_USERNAME=${postgres_db_username}
+      DATABASE_PASSWORD=${postgres_db_password}
+      PORT=${API_PORT}
+      ALLOWED_ORIGIN=${DOMAINE_NAME}
+      EOF
+    - cat .env
+    - npm run build
+  artifacts:
+    paths:
+      - server/dist/
+      - server/.env
+      - server/package.json
+      - server/package-lock.json
+    expire_in: 1 week
+
+# Deploy Production:
+deploy_production:
+  stage: deploy
+  dependencies:
+    - build_client
+    - build_server
+  before_script:
+    - apt-get update && apt-get install -y openssh-client curl unzip
+    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - unzip awscliv2.zip
+    - ./aws/install
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H $EC2_HOST >> ~/.ssh/known_hosts
+  script:
+    - echo "Déploiement du front sur le s3"
+    - aws s3 sync client/out/ s3://$s3_bucket_name/ --delete --region $aws_region
+    - echo "🚀 Déploiement du backend sur EC2"
+    - ssh $ec2_user@$EC2_HOST "sudo rm -rf /home/ubuntu/prototype"
+    - ssh $ec2_user@$EC2_HOST "sudo mkdir -p /home/ubuntu/prototype"
+    - ssh $ec2_user@$EC2_HOST "sudo chown -R $ec2_user:$ec2_user /home/ubuntu/prototype"
+    - scp -r server/dist/* $ec2_user@$EC2_HOST:/home/ubuntu/prototype/
+    - scp -r server/package*.json $ec2_user@$EC2_HOST:/home/ubuntu/prototype/
+    - scp -r server/.env $ec2_user@$EC2_HOST:/home/ubuntu/prototype/.env
+    - ssh $ec2_user@$EC2_HOST "cd /home/ubuntu/prototype && sudo npm install --omit=dev && sudo npm install -g pm2 && (sudo pm2 restart server || sudo pm2 start main.js --name server)"
+    - echo "🚀 Invalidation du cache CloudFront"
+    - aws cloudfront create-invalidation --distribution-id $cloudfront_distribution_id --paths "/*"
+  environment:
+    name: production
+  when: manual
+  only:
+    - master

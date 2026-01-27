@@ -1,0 +1,79 @@
+{
+  "game": {
+    "turn": "Ход {{number}}",
+    "discard": "Сброс",
+    "draw": "Взять карту",
+    "play": "играть",
+    "messages": {
+      "discardPhase": "Сбросьте карту, чтобы продолжить",
+      "drawPhase": "Возьмите карту",
+      "actionPhase": "Сыграйте карты или пропустите ход",
+      "canEndTurn": "Вы можете завершить ход",
+      "strategicShuffleFirst": "Первое стратегическое перетасовывание! ⚠️ Следующее использование завершит ваш ход.",
+      "strategicShuffleNext": "Стратегическое перетасовывание выполнено - Ваш ход завершён"
+    },
+    "gameOver": {
+      "title": "Игра окончена",
+      "surrendered": "Вы сдались",
+      "finalScore": "Итоговый счёт",
+      "newGame": "Новая игра"
+    },
+    "setup": {
+      "title": "Фаза подготовки",
+      "welcome": "Добро пожаловать в UNIT Card Game! Выберите 2 карты для своего резерва",
+      "reserve": "Резерв",
+      "yourHand": "Ваша рука",
+      "handCount": "карты",
+      "selectCards": "Выберите 2 карты для резерва",
+      "startGame": "Начать игру"
+    },
+    "cards": {
+      "deck": "Колода",
+      "discard": "Сброс",
+      "hand": "Рука",
+      "reserve": "Резерв",
+      "total": "Всего",
+      "slot": "Слот",
+      "jack": "Валет",
+      "king": "Король"
+    },
+    "actions": {
+      "exchange": "Обмен",
+      "surrender": "Сдаться",
+      "skipAction": "Пропустить действие",
+      "endTurn": "Завершить ход",
+      "strategicShuffle": "Стратегическое перетасовывание"
+    },
+    "ui": {
+      "startMessage": "Выберите первую карту для сброса",
+      "cardCount": "карты",
+      "strategicShuffle": "Стратегическое перетасовывание",
+      "cancel": "Отмена",
+      "confirm": "Подтвердить",
+      "opponentCards": "Карты противника"
+    },
+    "attack": {
+      "chooseAttack": "Выберите атаку",
+      "selectTarget": "Выберите цель",
+      "noValidTargets": "Нет доступных целей",
+      "healthTarget": "очки здоровья",
+      "warnings": {
+        "invalidTarget": "Недопустимая цель",
+        "unitAlreadyAttacked": "Этот юнит уже атаковал",
+        "protectedByKing": "Защищено Королём",
+        "cardNotAvailable": "Карта недоступна в руке",
+        "invalidHealthAttackCard": "Эту карту нельзя использовать для атаки по здоровью"
+      }
+    },
+    "block": {
+      "title": "Заблокировать Джокером?",
+      "description": "Игрок {{player}} атакует ваш {{target}} картой {{card}}. Вы можете заблокировать эту атаку Джокером.",
+      "selectJoker": "Выберите Джокера для использования:",
+      "inHand": "В руке",
+      "inReserve": "В резерве",
+      "block": "Заблокировать атаку",
+      "decline": "Пропустить атаку",
+      "noJokers": "У вас нет Джокеров для блокировки."
+    }
+  }
+}

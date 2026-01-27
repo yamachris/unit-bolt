@@ -1,0 +1,88 @@
+{
+  "game": {
+    "turn": "Runde {{number}}",
+    "discard": "Ablage",
+    "draw": "Ziehen",
+    "play": "Spielen",
+    "messages": {
+      "discardPhase": "Lege eine Karte ab, um weiterzumachen",
+      "drawPhase": "Ziehe eine Karte",
+      "actionPhase": "Spiele deine Karten oder überspringe deinen Zug",
+      "canEndTurn": "Du kannst deinen Zug beenden",
+      "strategicShuffleFirst": "Erstes Strategisches Mischen! ⚠️ Die nächste Nutzung lässt dich deinen Zug aussetzen.",
+      "strategicShuffleNext": "Strategisches Mischen abgeschlossen - Ende deines Zuges"
+    },
+    "gameOver": {
+      "title": "Spiel Vorbei",
+      "surrendered": "Du hast aufgegeben",
+      "finalScore": "Endstand",
+      "newGame": "Neues Spiel"
+    },
+    "setup": {
+      "title": "Vorbereitungsphase",
+      "welcome": "Willkommen bei UNIT Card Game! Wähle bitte 2 Karten für deine Reserve aus",
+      "reserve": "Reserve",
+      "yourHand": "Deine Hand",
+      "handCount": "Karten",
+      "selectCards": "Wähle 2 Karten für die Reserve",
+      "startGame": "Spiel Starten"
+    },
+    "cards": {
+      "deck": "Stapel",
+      "discard": "Ablage",
+      "hand": "Hand",
+      "reserve": "Reserve",
+      "total": "Gesamt",
+      "slot": "Platz",
+      "jack": "Bube",
+      "king": "König",
+      "as": "Ass",
+      "revolution": "Revolution",
+      "of": "der",
+      "suits": {
+        "hearts": "Herzen",
+        "diamonds": "Karo",
+        "clubs": "Kreuz",
+        "spades": "Pik"
+      }
+    },
+    "actions": {
+      "exchange": "Tauschen",
+      "surrender": "Aufgeben",
+      "skipAction": "Aktion Überspringen",
+      "endTurn": "Zug Beenden",
+      "strategicShuffle": "Strategisches Mischen"
+    },
+    "ui": {
+      "startMessage": "Wähle deine erste Karte, die du ablegen möchtest",
+      "cardCount": "Karten",
+      "strategicShuffle": "Strategisches Mischen",
+      "cancel": "Abbrechen",
+      "confirm": "Bestätigen",
+      "opponentCards": "Karten des Gegners"
+    },
+    "attack": {
+      "chooseAttack": "Wähle deinen Angriff",
+      "selectTarget": "Wähle ein Ziel",
+      "noValidTargets": "Keine gültigen Ziele verfügbar",
+      "healthTarget": "Lebenspunkte",
+      "warnings": {
+        "invalidTarget": "Ungültiges Ziel",
+        "unitAlreadyAttacked": "Diese Einheit hat bereits angegriffen",
+        "protectedByKing": "Durch König geschützt",
+        "cardNotAvailable": "Karte nicht auf der Hand verfügbar",
+        "invalidHealthAttackCard": "Diese Karte kann nicht für Lebensangriffe verwendet werden"
+      }
+    },
+    "block": {
+      "title": "Mit Joker blocken?",
+      "description": "Spieler {{player}} greift dein {{target}} mit {{card}} an. Du kannst diesen Angriff mit einem Joker blocken.",
+      "selectJoker": "Wähle einen Joker zum Verwenden:",
+      "inHand": "Auf der Hand",
+      "inReserve": "In Reserve",
+      "block": "Angriff Blocken",
+      "decline": "Angriff Zulassen",
+      "noJokers": "Du hast keine Joker zum Blocken."
+    }
+  }
+}

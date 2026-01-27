@@ -1,0 +1,146 @@
+{
+  "game": {
+    "turn": "Tour {{number}}",
+    "discard": "Défausse",
+    "draw": "Pioche",
+    "play": "Jouer",
+    "yourTurn": "Votre Tour",
+    "opponentTurn": "Tour de l'Adversaire",
+    "waitingForPlayers": "En attente des autres joueurs...",
+    "timeRunningOut": "Le temps est presque écoulé !",
+    "messages": {
+      "discardPhase": "Défaussez une carte pour continuer",
+      "drawPhase": "Piochez une carte",
+      "actionPhase": "Jouez vos cartes ou passez votre tour",
+      "canEndTurn": "Vous pouvez terminer votre tour",
+      "strategicShuffleFirst": "Premier mélange stratégique ! ⚠️ La prochaine utilisation vous fera passer votre tour.",
+      "strategicShuffleNext": "Mélange stratégique effectué - Fin de votre tour",
+      "reserveSuitOccupied": "Cette colonne a déjà un activateur (7 ou Joker)",
+      "faceCardPlaced": "{{value}} placé avec un activateur",
+      "wrongSuit": "Cette carte doit être placée dans sa colonne de couleur",
+      "slotOccupied": "Cet emplacement est déjà occupé",
+      "queenHealing": "La Dame vous soigne de {{amount}} PV !",
+      "queenChallengeResult": "Défi {{result}} ! Vous gagnez {{amount}} PV ❤️",
+      "queenChallengeStart": "Défi de la Bonne Dame lancé !",
+      "cardExchanged": "Cartes échangées",
+      "valetAttack": "Le Valet a détruit {{count}} cartes de la colonne {{suit}} !",
+      "valetCannotAttack": "Le Valet ne peut pas attaquer maintenant",
+      "valetPassive": "Valet passif - Ne peut pas attaquer ce tour",
+      "valetActive": "Cliquez pour attaquer avec le Valet"
+    },
+    "gameOver": {
+      "title": "Partie Terminée",
+      "surrendered": "Vous avez abandonné",
+      "finalScore": "Score final",
+      "newGame": "Nouvelle Partie"
+    },
+    "setup": {
+      "title": "Phase de préparation",
+      "welcome": "Bienvenue sur UNIT Card Game! Veuillez sélectionner 2 cartes pour votre réserve",
+      "reserve": "Réserve",
+      "yourHand": "Votre main",
+      "handCount": "cartes",
+      "selectCards": "Sélectionnez 2 cartes pour la réserve",
+      "startGame": "Commencer la partie",
+      "timeLeft": "Temps restant",
+      "timeExpired": "Partie annulée - Temps de préparation expiré"
+    },
+    "cards": {
+      "deck": "Pioche",
+      "discard": "Défausse",
+      "hand": "Main",
+      "reserve": "Réserve",
+      "total": "Total",
+      "slot": "Emplacement",
+      "jack": "Valet",
+      "king": "Roi",
+      "as": "As",
+      "revolution": "révolution",
+      "of": "de",
+      "suits": {
+        "hearts": "Cœurs",
+        "diamonds": "Carreaux",
+        "clubs": "Trèfles",
+        "spades": "Piques"
+      }
+    },
+    "actions": {
+      "exchange": "Échanger",
+      "surrender": "Abandonner",
+      "skipAction": "Passer l'Action",
+      "endTurn": "Fin du Tour",
+      "turnPassed": "Tour Passé",
+      "strategicShuffle": {
+        "button": "Mélange Stratégique",
+        "tooltip": "Mélanger les cartes de manière stratégique"
+      },
+      "placeSeven": "Placer",
+      "confirmSurrender": "Êtes-vous sûr de vouloir abandonner la partie ?",
+      "nextPhase": "Phase Suivante",
+      "startTurn": "Démarrer le Tour",
+      "block": {
+        "action": "Bloquer",
+        "tooltip": "Bloquer une attaque adverse",
+        "success": "Blocage activé ! Vous êtes protégé contre la prochaine attaque."
+      },
+      "sacrifice": {
+        "button": "Sacrifice",
+        "tooltip": "Sacrifier une carte spéciale"
+      }
+    },
+    "ui": {
+      "startMessage": "Sélectionnez votre première carte à défausser",
+      "cardCount": "cartes",
+      "strategicShuffle": "Mélange Stratégique",
+      "cancel": "Annuler",
+      "confirm": "Confirmer",
+      "opponentCards": "Cartes de l'adversaire"
+    },
+    "attack": {
+      "chooseAttack": "Choisissez votre attaque",
+      "selectTarget": "Sélectionnez une cible",
+      "noValidTargets": "Aucune cible valide disponible",
+      "healthTarget": "points de vie",
+      "warnings": {
+        "invalidTarget": "Cible invalide",
+        "unitAlreadyAttacked": "Cette unité a déjà attaqué",
+        "protectedByKing": "Protégé par le Roi",
+        "cardNotAvailable": "Carte non disponible en main",
+        "invalidHealthAttackCard": "Cette carte ne peut pas être utilisée pour les attaques de points de vie"
+      }
+    },
+    "block": {
+      "title": "Bloquer avec un Joker ou 7 de chance ?",
+      "description": "Le joueur {{player}} attaque votre {{target}} avec {{card}}. Vous pouvez bloquer cette attaque avec un Joker ou un 7 de chance.",
+      "selectJoker": "Sélectionnez un Joker à utiliser :",
+      "selectCard": "Sélectionnez une carte:",
+      "inHand": "En Main",
+      "inReserve": "En Réserve",
+      "inColumn": "En colonne",
+      "block": "Bloquer l'Attaque",
+      "decline": "Laisser Passer l'Attaque",
+      "noJokers": "Vous n'avez pas de Jokers pour bloquer."
+    }
+  },
+  "home": {
+    "presentation": {
+      "line1": "🎙️ « Bienvenue dans UNIT – un jeu de cartes stratégique explosif, où chaque joueur construit des armées pour déclencher... une Révolution. »",
+      "line2": "🎙️ « Avec un simple jeu de 54 cartes, vous assemblez des colonnes d'unités – de l'As au 10 – pour attaquer, défendre, et manipuler le terrain. »",
+      "line3": "🎙️ « Attention : les cartes spéciales comme les Rois, les Valets, ou les Jokers peuvent tout renverser. »",
+      "line4": "🎙️ « L'objectif ? Réduire les points de vie de votre adversaire à zéro… ou déclencher une Révolution qui inflige 10 dégâts d'un seul coup. »",
+      "line5": "🎙️ « C'est simple à comprendre, profond à maîtriser… et chaque partie est unique. »",
+      "line6": "🎙️ « Prêt à changer le cours de l'Histoire ? C'est le moment d'entrer dans UNIT. »"
+    }
+  },
+  "matomo": {
+    "examples": {
+      "title": "Exemples d'utilisation Matomo",
+      "buttons": {
+        "startGame": "Démarrer une partie (Track Event)",
+        "playCard": "Jouer un Joker (Track Card)",
+        "userLogin": "Connexion utilisateur (Set User ID)",
+        "gameWin": "Victoire (Track Goal)"
+      }
+    }
+  }
+}

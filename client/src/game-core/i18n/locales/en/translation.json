@@ -1,0 +1,146 @@
+{
+  "game": {
+    "turn": "Turn {{number}}",
+    "discard": "Discard",
+    "draw": "Draw",
+    "play": "Play",
+    "yourTurn": "Your Turn",
+    "opponentTurn": "Opponent's Turn",
+    "waitingForPlayers": "Waiting for all players to start...",
+    "timeRunningOut": "Time is running out!",
+    "messages": {
+      "discardPhase": "Discard a card to continue",
+      "drawPhase": "Draw a card",
+      "actionPhase": "Play your cards or skip your turn",
+      "canEndTurn": "You can end your turn",
+      "strategicShuffleFirst": "First Strategic Shuffle! ⚠️ The next use will make you skip your turn.",
+      "strategicShuffleNext": "Strategic shuffle completed - End of your turn",
+      "blockWithJokerSuccess": "Attack blocked with a Joker!",
+      "blockWithSevenSuccess": "Attack blocked with a Seven card!"
+    },
+    "gameOver": {
+      "title": "Game Over",
+      "surrendered": "You surrendered",
+      "finalScore": "Final Score",
+      "newGame": "New Game"
+    },
+    "setup": {
+      "title": "Setup Phase",
+      "welcome": "Welcome to UNIT Card Game! Please select 2 cards for your reserve",
+      "reserve": "Reserve",
+      "yourHand": "Your Hand",
+      "handCount": "cards",
+      "selectCards": "Select 2 cards for reserve",
+      "startGame": "Start Game",
+      "timeLeft": "Time Left",
+      "timeExpired": "Game cancelled - Setup time expired"
+    },
+    "cards": {
+      "deck": "Deck",
+      "discard": "Discard",
+      "hand": "Hand",
+      "reserve": "Reserve",
+      "total": "Total",
+      "slot": "Slot",
+      "jack": "Jack",
+      "king": "King",
+      "as": "Ace",
+      "revolution": "revolution",
+      "of": "of",
+      "suits": {
+        "hearts": "Hearts",
+        "diamonds": "Diamonds",
+        "clubs": "Clubs",
+        "spades": "Spades"
+      }
+    },
+    "actions": {
+      "exchange": "Exchange",
+      "surrender": "Surrender",
+      "skipAction": "Skip Action",
+      "endTurn": "End Turn",
+      "turnPassed": "Turn Passed",
+      "strategicShuffle": {
+        "button": "Strategic Shuffle",
+        "tooltip": "Shuffle cards strategically"
+      },
+      "placeSeven": "Place",
+      "confirmSurrender": "Are you sure you want to surrender?",
+      "nextPhase": "Next Phase",
+      "startTurn": "Start Turn",
+      "block": {
+        "action": "Block",
+        "tooltip": "Block an opponent's attack",
+        "success": "Block activated! You are protected against the next attack."
+      },
+      "sacrifice": {
+        "button": "Sacrifice",
+        "tooltip": "Sacrifice a special card"
+      }
+    },
+    "ui": {
+      "startMessage": "Select your first card to discard",
+      "cardCount": "cards",
+      "strategicShuffle": "Strategic Shuffle",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "opponentCards": "Opponent's cards"
+    },
+    "attack": {
+      "chooseAttack": "Choose your attack",
+      "selectTarget": "Select a target",
+      "noValidTargets": "No valid targets available",
+      "healthTarget": "health points",
+      "warnings": {
+        "invalidTarget": "Invalid target",
+        "unitAlreadyAttacked": "This unit has already attacked",
+        "protectedByKing": "Protected by King",
+        "cardNotAvailable": "Card not available in hand",
+        "invalidHealthAttackCard": "This card cannot be used for health attacks"
+      }
+    },
+    "block": {
+      "title": "Block with Joker or Lucky Seven?",
+      "description": "Player {{player}} attacks your {{target}} with {{card}}. You can block this attack with a Joker or Lucky Seven.",
+      "selectJoker": "Select a Joker to use:",
+      "selectCard": "Select a card:",
+      "inHand": "In Hand",
+      "inReserve": "In Reserve",
+      "inColumn": "In column",
+      "block": "Block Attack",
+      "decline": "Let Attack Pass",
+      "noJokers": "You don't have Jokers to block."
+    }
+  },
+  "home": {
+    "presentation": {
+      "line1": "🎙️ « Welcome to UNIT – an explosive strategic card game where each player builds armies to trigger... a Revolution. »",
+      "line2": "🎙️ « With a simple deck of 54 cards, you assemble unit columns – from Ace to 10 – to attack, defend, and manipulate the battlefield. »",
+      "line3": "🎙️ « Beware: special cards like Kings, Jacks, or Jokers can turn everything around. »",
+      "line4": "🎙️ « The goal? Reduce your opponent's health to zero... or trigger a Revolution that deals 10 damage in one blow. »",
+      "line5": "🎙️ « Simple to understand, deep to master... and every game is unique. »",
+      "line6": "🎙️ « Ready to change the course of History? It's time to enter UNIT. »"
+    }
+  },
+  "matomo": {
+    "examples": {
+      "title": "Matomo Usage Examples",
+      "buttons": {
+        "startGame": "Start Game (Track Event)",
+        "playCard": "Play Joker (Track Card)",
+        "userLogin": "User Login (Set User ID)",
+        "gameWin": "Victory (Track Goal)"
+      }
+    }
+  },
+  "home": {
+    "presentation": {
+      "line1": "🎙️ \"Welcome to UNIT – an explosive strategic card game where each player builds armies to trigger... a Revolution.\"",
+      "line2": "🎙️ \"With a simple 54-card deck, you assemble columns of units – from Ace to 10 – to attack, defend, and manipulate the battlefield.\"",
+      "line3": "🎙️ \"Beware: special cards like Kings, Jacks, or Jokers can turn everything upside down.\"",
+      "line4": "🎙️ \"The goal? Reduce your opponent’s health to zero… or trigger a Revolution that deals 10 damage in a single blow.\"",
+      "line5": "🎙️ \"Easy to grasp, deep to master… and every game is unique.\"",
+      "line6": "🎙️ \"Ready to change the course of History? It’s time to enter UNIT.\""
+    }
+  }
+}

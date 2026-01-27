@@ -1,0 +1,112 @@
+.attack-result-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.attack-result-popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  width: 400px;
+  animation: popup-fade 0.3s ease-in-out;
+}
+
+.attack-result-popup.blocked {
+  border: 2px solid #22c55e;
+}
+
+.attack-result-popup.successful {
+  border: 2px solid #ef4444;
+}
+
+@keyframes popup-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.notification-header h2 {
+  color: #1f2937;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.timer {
+  background: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.attack-card,
+.target-card {
+  min-width: 80px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-suit {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.attack-arrow {
+  font-size: 2rem;
+  color: #6b7280;
+}
+
+.health-damage {
+  text-align: center;
+}
+
+.damage-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+}
+
+.damage-label {
+  color: #6b7280;
+  font-size: 1rem;
+}
