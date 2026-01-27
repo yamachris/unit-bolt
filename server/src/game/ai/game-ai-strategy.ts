@@ -226,7 +226,7 @@ export class GameAIStrategy {
         return {
           action: 'USE_SPECIAL',
           cards: [queen, activator],
-          suit: queen.suit,
+          suit: queen.suit !== 'SPECIAL' ? queen.suit : undefined,
           reasoning: 'Heal with Queen',
         };
       }

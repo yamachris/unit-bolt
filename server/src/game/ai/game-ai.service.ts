@@ -157,7 +157,7 @@ export class GameAIService {
       playerState.currentPlayer.reserve,
     );
 
-    const deckSize = playerState.currentPlayer.deck.length;
+    const deckSize = playerState.deck.length;
     const discardSize = playerState.currentPlayer.discardPile.length;
 
     if (deckSize < 5 && discardSize > 10) {
