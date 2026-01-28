@@ -286,6 +286,14 @@ export class GameGateway implements OnGatewayInit {
     }
 
     this.sendGameStateToAllPlayers(gameState, data.gameId);
+
+    // Trigger AI turn if the current player is AI (after sending initial state)
+    if (game && readyPlayers >= gameData.players.length) {
+      const updatedState = await this.gameService.triggerAITurnIfNeeded(data.gameId);
+      if (updatedState) {
+        this.sendGameStateToAllPlayers(updatedState, data.gameId);
+      }
+    }
   }
 
   @SubscribeMessage('placeCard')
@@ -763,6 +771,12 @@ export class GameGateway implements OnGatewayInit {
     await this.timerService.resetTimer(data.gameId, TimerType.TURN);
 
     this.sendGameStateToAllPlayers(gameState, data.gameId);
+
+    // Trigger AI turn if the next player is AI
+    const updatedState = await this.gameService.triggerAITurnIfNeeded(data.gameId);
+    if (updatedState) {
+      this.sendGameStateToAllPlayers(updatedState, data.gameId);
+    }
   }
 
   @SubscribeMessage('surrender')

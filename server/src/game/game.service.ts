@@ -57,9 +57,9 @@ export class GameService {
     this.aiTurnManager = new GameAITurnManager(this);
   }
 
-  async triggerAITurnIfNeeded(gameId: string): Promise<void> {
+  async triggerAITurnIfNeeded(gameId: string): Promise<Game | null> {
     const gameData = await this.getGameState(gameId);
-    if (!gameData) return;
+    if (!gameData) return null;
 
     const currentPlayerId = gameData.players[gameData.currentPlayerIndex];
 
@@ -71,7 +71,12 @@ export class GameService {
       } else {
         await this.aiTurnManager.handleAITurn(gameId, currentPlayerId);
       }
+
+      // Return updated game state after AI action
+      return await this.getGameState(gameId);
     }
+
+    return gameData;
   }
 
   async createGame(mode: string, playersInfo: any[]): Promise<string> {

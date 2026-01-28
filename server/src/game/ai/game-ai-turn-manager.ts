@@ -36,30 +36,43 @@ export class GameAITurnManager {
   async handleAITurn(gameId: string, aiPlayerId: string): Promise<void> {
     console.log(`🤖 AI Turn for player ${aiPlayerId}`);
 
-    const gameData = await this.gameServiceRef.getGameState(gameId);
+    let gameData = await this.gameServiceRef.getGameState(gameId);
     if (!gameData) return;
 
-    const aiPlayerIndex = gameData.players.indexOf(aiPlayerId);
+    let aiPlayerIndex = gameData.players.indexOf(aiPlayerId);
     if (aiPlayerIndex === -1) return;
 
-    const aiState = gameData.playersGameStates[aiPlayerIndex];
+    let aiState = gameData.playersGameStates[aiPlayerIndex];
 
     if (aiState.phase === 'DISCARD' && !aiState.hasDiscarded) {
       await this.handleAIDiscard(gameId, aiPlayerId, gameData, aiPlayerIndex);
+      // Refresh game state after discard
+      gameData = await this.gameServiceRef.getGameState(gameId);
+      if (!gameData) return;
+      aiState = gameData.playersGameStates[aiPlayerIndex];
     }
 
     if (aiState.phase === 'DRAW' && !aiState.hasDrawn) {
       await this.handleAIDraw(gameId, aiPlayerId);
+      // Refresh game state after draw
+      gameData = await this.gameServiceRef.getGameState(gameId);
+      if (!gameData) return;
+      aiState = gameData.playersGameStates[aiPlayerIndex];
     }
 
     if (aiState.phase === 'PLAY' && !aiState.hasPlayedAction) {
       await this.handleAIPlay(gameId, aiPlayerId, gameData, aiPlayerIndex);
+      // Refresh game state after play
+      gameData = await this.gameServiceRef.getGameState(gameId);
+      if (!gameData) return;
+      aiState = gameData.playersGameStates[aiPlayerIndex];
     }
 
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    if (aiState.canEndTurn || aiState.hasPlayedAction) {
-      await this.gameServiceRef.handlePassTurn(gameId, aiPlayerId);
+    // Always try to end turn if in PLAY phase
+    if (aiState.phase === 'PLAY' || aiState.canEndTurn || aiState.hasPlayedAction) {
+      await this.gameServiceRef.endTurn(gameId, aiPlayerId);
     }
   }
 
