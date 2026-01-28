@@ -510,26 +510,27 @@ export default function Home() {
           {/* Game Modes */}
           <div className="space-y-4">
             {/* Solo Mode */}
-            <div className="bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl p-6 shadow-xl border border-gray-500/30 opacity-75">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl border border-blue-500/30">
               <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center mr-3">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                   <span className="text-white font-bold">🎲</span>
                 </div>
                 <h2 className="text-xl font-bold text-white">Mode Solo</h2>
-                <span className="ml-auto text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-lg border border-yellow-500/30">
-                  En maintenance
-                </span>
               </div>
-              <p className="text-gray-200 text-sm mb-4">
+              <p className="text-blue-100 text-sm mb-4">
                 {`
-                Le mode solo est temporairement désactivé pour des améliorations.
-                Jouez en ligne en attendant !`}
+                Défiez un bot simple dans un duel stratégique en tête-à-tête.
+                Parfait pour pratiquer !`}
               </p>
               <button
-                disabled={true}
-                className="w-full py-3 bg-gray-800/50 text-gray-400 font-semibold rounded-xl transition-all duration-200 cursor-not-allowed backdrop-blur-sm border border-gray-700/30"
+                onClick={handleStartSoloGame}
+                disabled={
+                  !playerNickname.trim() || matchmakingStatus === "waiting"
+                }
+                className="w-full py-3 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm border border-white/20"
               >
-                Temporairement indisponible
+                {`
+                Jouer contre le Bot`}
               </button>
             </div>
 

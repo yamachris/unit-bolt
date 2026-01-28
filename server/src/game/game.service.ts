@@ -6,7 +6,6 @@ import { TimerService } from './timer.service';
 import { TimerType, GameTimer } from '../entities/game-timer.entity';
 import { MatchmakingQueue } from '../entities/matchmaking-queue.entity';
 import { AuthService } from '../auth/auth.service';
-import { GameAITurnManager } from './ai/game-ai-turn-manager';
 import {
   Card,
   Game,
@@ -44,8 +43,6 @@ import { TIME_SETUP_LIMIT, TIME_TURN_LIMIT } from '../constants/timers';
 
 @Injectable()
 export class GameService {
-  private aiTurnManager: GameAITurnManager;
-
   constructor(
     @InjectRepository(GameEntity)
     private gameRepository: Repository<GameEntity>,
@@ -53,14 +50,7 @@ export class GameService {
     private queueRepository: Repository<MatchmakingQueue>,
     private authService: AuthService,
     private timerService: TimerService,
-  ) {
-    this.aiTurnManager = new GameAITurnManager(this);
-  }
-
-  async triggerAITurnIfNeeded(gameId: string): Promise<Game | null> {
-    // AI is temporarily disabled to prevent game logic interference
-    return null;
-  }
+  ) {}
 
   async createGame(mode: string, playersInfo: any[]): Promise<string> {
     const nbPlayers = mode === 'solo' ? 2 : playersInfo.length;
@@ -593,7 +583,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
 
     return game.state;
   }
@@ -1060,8 +1049,7 @@ export class GameService {
         game.state = gameData;
         await this.gameRepository.save(game);
 
-        await this.triggerAITurnIfNeeded(gameId);
-
+    
         return game.state;
       }
     }
@@ -1073,7 +1061,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
 
     return game.state;
   }
@@ -1142,7 +1129,6 @@ export class GameService {
 
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1198,7 +1184,6 @@ export class GameService {
 
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1374,7 +1359,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1605,7 +1589,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1666,7 +1649,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1801,7 +1783,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -1990,7 +1971,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2033,7 +2013,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2061,7 +2040,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2193,7 +2171,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2272,7 +2249,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2314,7 +2290,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -2436,7 +2411,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 
@@ -3274,7 +3248,6 @@ export class GameService {
     game.state = gameData;
     await this.gameRepository.save(game);
 
-    await this.triggerAITurnIfNeeded(gameId);
     return game.state;
   }
 

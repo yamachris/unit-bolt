@@ -10,6 +10,7 @@ import { Server, Socket } from 'socket.io';
 import { TimerType } from '../entities/game-timer.entity';
 import { TimerService } from './timer.service';
 import { GameService } from './game.service';
+import { SimpleBotService } from './simple-bot.service';
 import { Card, Profile, Game as GameType, TargetAttackType, QueenCard } from 'src/types/game';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -43,6 +44,7 @@ export class GameGateway implements OnGatewayInit {
     @InjectRepository(GameEntity)
     private gameRepository: Repository<GameEntity>,
     private readonly timerService: TimerService,
+    private readonly botService: SimpleBotService,
   ) {}
 
   afterInit() {
@@ -263,6 +265,8 @@ export class GameGateway implements OnGatewayInit {
 
     // Get the game to check how many players there are
     const game = await this.gameService.getGameState(data.gameId);
+    let allPlayersReady = false;
+
     if (game) {
       const gameData = game as GameType;
       const totalPlayers = gameData.players.length;
@@ -273,6 +277,7 @@ export class GameGateway implements OnGatewayInit {
       // Only clear setup timer and start turn timer when all players are ready
       if (readyPlayers >= totalPlayers) {
         console.log(`All players ready for game ${data.gameId}, clearing setup timer and starting turn timer`);
+        allPlayersReady = true;
 
         // Clear setup timer when all players are ready
         this.clearSetupTimer(data.gameId);
@@ -286,6 +291,15 @@ export class GameGateway implements OnGatewayInit {
     }
 
     this.sendGameStateToAllPlayers(gameState, data.gameId);
+
+    if (game && allPlayersReady) {
+      setTimeout(async () => {
+        const updatedGame = await this.gameService.getGameState(data.gameId);
+        if (updatedGame) {
+          await this.botService.playBotTurn(updatedGame, this);
+        }
+      }, 1500);
+    }
   }
 
   @SubscribeMessage('placeCard')
@@ -763,6 +777,13 @@ export class GameGateway implements OnGatewayInit {
     await this.timerService.resetTimer(data.gameId, TimerType.TURN);
 
     this.sendGameStateToAllPlayers(gameState, data.gameId);
+
+    setTimeout(async () => {
+      const updatedGame = await this.gameService.getGameState(data.gameId);
+      if (updatedGame) {
+        await this.botService.playBotTurn(updatedGame, this);
+      }
+    }, 1500);
   }
 
   @SubscribeMessage('surrender')
