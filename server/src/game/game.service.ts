@@ -58,25 +58,8 @@ export class GameService {
   }
 
   async triggerAITurnIfNeeded(gameId: string): Promise<Game | null> {
-    const gameData = await this.getGameState(gameId);
-    if (!gameData) return null;
-
-    const currentPlayerId = gameData.players[gameData.currentPlayerIndex];
-
-    if (this.aiTurnManager.isAIPlayer(currentPlayerId)) {
-      const currentPlayerState = gameData.playersGameStates[gameData.currentPlayerIndex];
-
-      if (currentPlayerState.phase === 'SETUP') {
-        await this.aiTurnManager.handleAISetup(gameId, currentPlayerId);
-      } else {
-        await this.aiTurnManager.handleAITurn(gameId, currentPlayerId);
-      }
-
-      // Return updated game state after AI action
-      return await this.getGameState(gameId);
-    }
-
-    return gameData;
+    // AI is temporarily disabled to prevent game logic interference
+    return null;
   }
 
   async createGame(mode: string, playersInfo: any[]): Promise<string> {
